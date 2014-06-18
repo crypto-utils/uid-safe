@@ -11,11 +11,11 @@
   "license": "MIT",
   "repository": "jonathanong/uid-safe",
   "dependencies": {
-    "mz": "0",
-    "bluebird": "2",
+    "mz": "1",
     "base64-url": "1"
   },
   "devDependencies": {
+    "bluebird": "2",
     "mocha": "1"
   },
   "scripts": {

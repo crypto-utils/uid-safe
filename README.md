@@ -20,6 +20,9 @@ Because `base64` encoding is used underneath, this is not the string length!
 For example, to create a UID of length 24, you want a byte length of 18!
 
 If `cb` is not defined, a promise is returned.
+However, to use promises, you must either install [bluebird](https://github.com/petkaantonov/bluebird)
+or use a version of node.js that has native promises,
+otherwise your process will crash and die.
 
 ```js
 uid(18).then(function (string) {
