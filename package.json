@@ -1,7 +1,7 @@
 {
   "name": "uid-safe",
   "description": "URL and cookie safe UIDs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Jonathan Ong",
     "email": "me@jongleberry.com",
@@ -9,7 +9,7 @@
     "twitter": "https://twitter.com/jongleberry"
   },
   "license": "MIT",
-  "repository": "jonathanong/uid-safe",
+  "repository": "crypto-utils/uid-safe",
   "dependencies": {
     "mz": "1",
     "base64-url": "1"
