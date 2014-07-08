@@ -5,29 +5,22 @@ var uid = require('./')
 
 describe('uid-url', function () {
   describe('uid()', function () {
-    it('should return a uid of the correct length', function () {
-      return uid(18).then(function (val) {
+    it('should return a uid of the correct length', function (done) {
+      return uid(18, function (err, val) {
         assert.equal(24, Buffer.byteLength(val))
+        done()
       })
     })
 
-    it('should not contain +, /, or =', function () {
-      return uid(100000).then(function (val) {
-        assert(!~val.indexOf('+'))
-        assert(!~val.indexOf('/'))
-        assert(!~val.indexOf('='))
-      })
-    })
-
-    it('should support callbacks', function (done) {
-      uid(1000000, function (err, val) {
-        if (err) return done(err)
+    it('should not contain +, /, or =', function (done) {
+      return uid(100000, function (err, val) {
         assert(!~val.indexOf('+'))
         assert(!~val.indexOf('/'))
         assert(!~val.indexOf('='))
         done()
       })
     })
+
   })
 
   describe('uid.sync()', function () {
