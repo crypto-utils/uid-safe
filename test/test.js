@@ -1,7 +1,7 @@
 
 var assert = require('assert')
 
-var uid = require('./')
+var uid = require('..')
 
 describe('uid-url', function () {
   describe('uid()', function () {

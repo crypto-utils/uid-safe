@@ -16,9 +16,19 @@
   },
   "devDependencies": {
     "bluebird": "2",
+    "istanbul": "0",
     "mocha": "1"
   },
   "scripts": {
-    "test": "mocha --reporter spec --bail"
-  }
+    "test": "node --trace-deprecation node_modules/.bin/_mocha",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot",
+    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot"
+  },
+  "keywords": [
+    "random",
+    "generator",
+    "uid",
+    "safe"
+  ],
+  "files": ["index.js"]
 }
