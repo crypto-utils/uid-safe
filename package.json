@@ -19,6 +19,12 @@
     "istanbul": "0",
     "mocha": "~2.1.0"
   },
+  "files": [
+    "LICENSE",
+    "HISTORY.md",
+    "README.md",
+    "index.js"
+  ],
   "scripts": {
     "test": "mocha --trace-deprecation --reporter spec --bail --check-leaks test/",
     "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --trace-deprecation --reporter dot --check-leaks test/",
@@ -29,6 +35,5 @@
     "generator",
     "uid",
     "safe"
-  ],
-  "files": ["index.js"]
+  ]
 }
