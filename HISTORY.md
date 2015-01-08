@@ -1,5 +1,5 @@
-unreleased
-==========
+1.0.2 / 2015-01-08
+==================
 
   * Remove dependency on `mz`
 
