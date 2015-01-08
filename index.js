@@ -1,21 +1,25 @@
 
+var Promise
 var pseudoRandomBytes = require('crypto').pseudoRandomBytes
 var escape = require('base64-url').escape
 
-var pseudoRandomBytesProm
-
 module.exports = uid
 
-function uid(length, cb) {
-  if (cb) {
-    return pseudoRandomBytes(length, function (err, buf) {
-      if (err) return cb(err)
-      cb(null, escapeBuffer(buf))
-    })
+function uid(length, callback) {
+  if (callback) {
+    return generateUid(length, callback)
   }
 
-  pseudoRandomBytesProm || (pseudoRandomBytesProm = require('mz/crypto').pseudoRandomBytes)
-  return pseudoRandomBytesProm(length).then(escapeBuffer)
+  if (!Promise) {
+    Promise = require('native-or-bluebird')
+  }
+
+  return new Promise(function (resolve, reject) {
+    generateUid(length, function (err, str) {
+      if (err) return reject(err)
+      resolve(str)
+    })
+  })
 }
 
 uid.sync = function uid_sync(length) {
@@ -24,4 +28,11 @@ uid.sync = function uid_sync(length) {
 
 function escapeBuffer(buf) {
   return escape(buf.toString('base64'))
+}
+
+function generateUid(length, callback) {
+  pseudoRandomBytes(length, function (err, buf) {
+    if (err) return cb(err)
+    callback(null, escapeBuffer(buf))
+  })
 }
