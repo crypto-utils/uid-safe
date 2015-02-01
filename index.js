@@ -69,7 +69,7 @@ function uidSync(length) {
 
 function generateUid(length, callback) {
   pseudoRandomBytes(length, function (err, buf) {
-    if (err) return cb(err)
+    if (err) return callback(err)
     callback(null, toString(buf))
   })
 }

@@ -1,6 +1,7 @@
 unreleased
 ==========
 
+  * Fix error branch that would throw
   * deps: base64-url@1.2.0
 
 1.0.2 / 2015-01-08
