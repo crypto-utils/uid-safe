@@ -1,3 +1,8 @@
+unreleased
+==========
+
+  * Use `crypto.randomBytes`, if available
+
 1.0.3 / 2015-01-31
 ==================
 

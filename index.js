@@ -11,7 +11,7 @@
  */
 
 var Promise
-var pseudoRandomBytes = require('crypto').pseudoRandomBytes
+var crypto = require('crypto')
 var escape = require('base64-url').escape
 
 /**
@@ -56,7 +56,11 @@ function uid(length, callback) {
  */
 
 function uidSync(length) {
-  return toString(pseudoRandomBytes(length))
+  try {
+    return toString(crypto.randomBytes(length))
+  } catch (e) {
+    return toString(crypto.pseudoRandomBytes(length))
+  }
 }
 
 /**
@@ -68,9 +72,28 @@ function uidSync(length) {
  */
 
 function generateUid(length, callback) {
-  pseudoRandomBytes(length, function (err, buf) {
+  randomBytes(length, function (err, buf) {
     if (err) return callback(err)
     callback(null, toString(buf))
+  })
+}
+
+/**
+ * Get some random bytes.
+ *
+ * @param {number} length
+ * @param {function} callback
+ * @return {Buffer}
+ * @private
+ */
+
+function randomBytes(length, callback) {
+  crypto.randomBytes(length, function (err, buf) {
+    if (!err) return callback(null, buf)
+    crypto.pseudoRandomBytes(length, function (err, buf) {
+      if (err) return callback(err)
+      callback(null, buf)
+    })
   })
 }
 
