@@ -1,5 +1,5 @@
-unreleased
-==========
+1.0.3 / 2015-01-31
+==================
 
   * Fix error branch that would throw
   * deps: base64-url@1.2.0
