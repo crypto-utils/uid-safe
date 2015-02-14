@@ -9,7 +9,7 @@
   "license": "MIT",
   "repository": "crypto-utils/uid-safe",
   "dependencies": {
-    "base64-url": "1.2.0",
+    "base64-url": "1.2.1",
     "native-or-bluebird": "~1.1.2"
   },
   "devDependencies": {

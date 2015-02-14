@@ -2,6 +2,7 @@ unreleased
 ==========
 
   * Use `crypto.randomBytes`, if available
+  * deps: base64-url@1.2.1
 
 1.0.3 / 2015-01-31
 ==================
