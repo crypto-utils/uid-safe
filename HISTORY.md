@@ -1,5 +1,5 @@
-unreleased
-==========
+1.1.0 / 2015-02-01
+==================
 
   * Use `crypto.randomBytes`, if available
   * deps: base64-url@1.2.1
