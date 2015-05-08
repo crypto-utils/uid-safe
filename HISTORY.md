@@ -1,3 +1,8 @@
+2.x
+===
+
+  * Use global `Promise` when returning a promise
+
 1.1.0 / 2015-02-01
 ==================
 
