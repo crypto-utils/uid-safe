@@ -1,5 +1,5 @@
-2.x
-===
+2.0.0 / 2015-05-08
+==================
 
   * Use global `Promise` when returning a promise
 
