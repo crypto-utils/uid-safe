@@ -44,7 +44,7 @@ uid(18, function (err, string) {
 Asynchronously create a UID with a specific byte length and return a
 `Promise`.
 
-**To use promises, you must define a global `Promise` if necessary.**
+**To use promises, an es6 compliant implementation of promises must be defined in a global Promise variable in your environment. This is not the case for current versions of Node.js, but it can be achieved with a polyfill like the one in the es6-promise project.**
 
 ```js
 uid(18).then(function (string) {
