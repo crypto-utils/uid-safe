@@ -1,14 +1,7 @@
 var assert = require('assert')
-var crypto = require('crypto')
-var proxyquire = require('proxyquire')
+var uid = require('..')
 
 var Promise = global.Promise || require('bluebird')
-
-var uid = proxyquire('..', {
-  crypto: {
-    randomBytes: randomBytes
-  }
-})
 
 // Add Promise to mocha's global list
 global.Promise = global.Promise
@@ -34,22 +27,6 @@ describe('uid()', function () {
         assert(!~val.indexOf('+'))
         assert(!~val.indexOf('/'))
         assert(!~val.indexOf('='))
-      })
-    })
-
-    describe('when PRNG not seeded', function () {
-      before(function () {
-        randomBytes.seeded = false
-      })
-
-      after(function () {
-        randomBytes.seeded = true
-      })
-
-      it('should still generate uid', function () {
-        return uid(18).then(function (val) {
-          assert.equal(24, Buffer.byteLength(val))
-        })
       })
     })
   })
@@ -92,24 +69,6 @@ describe('uid()', function () {
         done()
       })
     })
-
-    describe('when PRNG not seeded', function () {
-      before(function () {
-        randomBytes.seeded = false
-      })
-
-      after(function () {
-        randomBytes.seeded = true
-      })
-
-      it('should still generate uid', function (done) {
-        uid(18, function (err, val) {
-          if (err) return done(err)
-          assert.equal(24, Buffer.byteLength(val))
-          done()
-        })
-      })
-    })
   })
 })
 
@@ -125,34 +84,4 @@ describe('uid.sync()', function () {
     assert(!~val.indexOf('/'))
     assert(!~val.indexOf('='))
   })
-
-  describe('when PRNG not seeded', function () {
-    before(function () {
-      randomBytes.seeded = false
-    })
-
-    after(function () {
-      randomBytes.seeded = true
-    })
-
-    it('should still generate uid', function () {
-      var val = uid.sync(18)
-      assert.equal(24, Buffer.byteLength(val))
-    })
-  })
 })
-
-function randomBytes(length, callback) {
-  if (randomBytes.seeded !== false) {
-    return crypto.randomBytes(length, callback)
-  }
-
-  // The crazy not seeded error
-  var err = new Error('error:24064064:random number generator:SSLEAY_RAND_BYTES:PRNG not seeded')
-
-  if (!callback) {
-    throw err
-  }
-
-  callback(err)
-}

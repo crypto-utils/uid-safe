@@ -9,13 +9,13 @@
   "license": "MIT",
   "repository": "crypto-utils/uid-safe",
   "dependencies": {
-    "base64-url": "1.2.1"
+    "base64-url": "1.2.1",
+    "random-bytes": "~1.0.0"
   },
   "devDependencies": {
     "bluebird": "3.1.1",
     "istanbul": "0.4.2",
-    "mocha": "2.3.4",
-    "proxyquire": "~1.2.0"
+    "mocha": "2.3.4"
   },
   "files": [
     "LICENSE",

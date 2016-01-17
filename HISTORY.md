@@ -1,3 +1,8 @@
+unreleased
+==========
+
+  * Use `random-bytes` for byte source
+
 2.0.0 / 2015-05-08
 ==================
 
