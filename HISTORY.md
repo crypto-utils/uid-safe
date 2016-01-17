@@ -1,5 +1,5 @@
-unreleased
-==========
+2.1.0 / 2016-01-17
+==================
 
   * Use `random-bytes` for byte source
 
