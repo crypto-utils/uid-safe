@@ -13,7 +13,7 @@
     "random-bytes": "~1.0.0"
   },
   "devDependencies": {
-    "bluebird": "3.3.4",
+    "bluebird": "3.3.5",
     "istanbul": "0.4.3",
     "mocha": "2.4.5"
   },
