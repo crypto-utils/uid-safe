@@ -32,7 +32,7 @@ module.exports.sync = uidSync
  * @public
  */
 
-function uid(length, callback) {
+function uid (length, callback) {
   // validate callback is a function, if provided
   if (callback !== undefined && typeof callback !== 'function') {
     throw new TypeError('argument callback must be a function')
@@ -48,8 +48,8 @@ function uid(length, callback) {
     return generateUid(length, callback)
   }
 
-  return new Promise(function executor(resolve, reject) {
-    generateUid(length, function onUid(err, str) {
+  return new Promise(function executor (resolve, reject) {
+    generateUid(length, function onUid (err, str) {
       if (err) return reject(err)
       resolve(str)
     })
@@ -64,7 +64,7 @@ function uid(length, callback) {
  * @public
  */
 
-function uidSync(length) {
+function uidSync (length) {
   return toString(randomBytes.sync(length))
 }
 
@@ -76,7 +76,7 @@ function uidSync(length) {
  * @private
  */
 
-function generateUid(length, callback) {
+function generateUid (length, callback) {
   randomBytes(length, function (err, buf) {
     if (err) return callback(err)
     callback(null, toString(buf))
@@ -91,6 +91,6 @@ function generateUid(length, callback) {
  * @private
  */
 
-function toString(buf) {
+function toString (buf) {
   return escape(buf.toString('base64'))
 }
