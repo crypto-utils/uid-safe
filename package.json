@@ -13,7 +13,7 @@
     "random-bytes": "~1.0.0"
   },
   "devDependencies": {
-    "bluebird": "3.4.1",
+    "bluebird": "3.4.6",
     "eslint": "2.13.1",
     "eslint-config-standard": "5.3.5",
     "eslint-plugin-promise": "2.0.1",
