@@ -12,8 +12,16 @@
  * @private
  */
 
-var escape = require('base64-url').escape
 var randomBytes = require('random-bytes')
+
+/**
+ * Module variables.
+ * @private
+ */
+
+var EQUAL_GLOBAL_REGEXP = /=/g
+var PLUS_GLOBAL_REGEXP = /\+/g
+var SLASH_GLOBAL_REGEXP = /\//g
 
 /**
  * Module exports.
@@ -92,5 +100,8 @@ function generateUid (length, callback) {
  */
 
 function toString (buf) {
-  return escape(buf.toString('base64'))
+  return buf.toString('base64')
+    .replace(PLUS_GLOBAL_REGEXP, '-')
+    .replace(SLASH_GLOBAL_REGEXP, '_')
+    .replace(EQUAL_GLOBAL_REGEXP, '')
 }
