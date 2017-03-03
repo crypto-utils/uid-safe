@@ -1,7 +1,7 @@
 /*!
  * uid-safe
  * Copyright(c) 2014 Jonathan Ong
- * Copyright(c) 2015-2016 Douglas Christopher Wilson
+ * Copyright(c) 2015-2017 Douglas Christopher Wilson
  * MIT Licensed
  */
 
