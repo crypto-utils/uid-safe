@@ -1,7 +1,7 @@
 {
   "name": "uid-safe",
   "description": "URL and cookie safe UIDs",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "contributors": [
     "Douglas Christopher Wilson <doug@somethingdoug.com>",
     "Jonathan Ong <me@jongleberry.com> (http://jongleberry.com)"
