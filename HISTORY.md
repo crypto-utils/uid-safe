@@ -1,5 +1,5 @@
-unreleased
-==========
+2.1.5 / 2017-08-02
+==================
 
   * perf: remove only trailing `=`
 
