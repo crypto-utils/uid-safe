@@ -4,6 +4,7 @@ var uid = require('..')
 var Promise = global.Promise || require('bluebird')
 
 // Add Promise to mocha's global list
+// eslint-disable-next-line no-self-assign
 global.Promise = global.Promise
 
 describe('uid()', function () {
