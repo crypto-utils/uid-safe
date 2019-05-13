@@ -9,10 +9,10 @@
 URL and cookie safe UIDs
 
 Create cryptographically secure UIDs safe for both cookie and URL usage.
-This is in contrast to modules such as [rand-token](https://www.npmjs.com/package/rand-token)
-and [uid2](https://www.npmjs.com/package/uid2) whose UIDs are actually skewed
-due to the use of `%` and unnecessarily truncate the UID.
-Use this if you could still use UIDs with `-` and `_` in them.
+This is in contrast to modules such as [uid2](https://www.npmjs.com/package/uid2)
+whose UIDs are actually skewed due to the use of `%` and unnecessarily
+truncate the UID. Use this if you could still use UIDs with `-` and `_` in
+them.
 
 ## Installation
 
